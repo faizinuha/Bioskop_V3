@@ -1,0 +1,311 @@
+* {
+    scroll-behavior: smooth;
+}
+
+.film-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+}
+
+.film-card {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    margin: 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    width: 100px; /* Adjusted for better alignment */
+    height: 100px; /* Adjusted for better alignment */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #0056b3;
+    color: white;
+    font-size: 1.2rem;
+    text-align: center; /* Ensure text is centered */
+}
+
+.film-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.film-label {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.film-card img {
+    width: 50px;
+    object-fit: cover;
+    transition: transform 0.3s ease-out;
+    border-radius: 10px 10px 0 0;
+}
+
+.film-card:hover img {
+    transform: scale(1.05);
+}
+
+.film-description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+    color: #fff;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+}
+
+.film-card:hover .film-description {
+    opacity: 1;
+}
+
+.film-label-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+.btn-pesan {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    opacity: 0.9;
+    margin-top: 10px;
+}
+
+.btn-pesan:hover {
+    background-color: #ff4757;
+    transform: scale(1.05);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    display: none;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-create,
+.btn-edit,
+.btn-delete {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-create:hover,
+.btn-edit:hover,
+.btn-delete:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.btn-create {
+    margin-bottom: 20px;
+}
+
+.btn-edit {
+    background-color: #28a745;
+}
+
+.btn-edit:hover {
+    background-color: #218838;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+}
+
+.modal.fade .modal-dialog {
+    transform: translate(0, -100%);
+    transition: transform 0.3s ease-out;
+}
+
+.modal.fade.show .modal-dialog {
+    transform: translate(0, 0);
+}
+
+.modal-content {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header,
+.modal-footer {
+    border: none;
+}
+
+.modal-footer {
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.modal-footer .btn {
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.modal-footer .btn:hover {
+    transform: scale(1.05);
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Mengatur jarak antar button */
+    margin-top: 10px; /* Jarak antara kursi-item dan button */
+    position: absolute;
+    bottom: -30px; /* Mengatur posisi button di bawah kursi-item */
+}
+
+.button-group .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border: none;
+    background: none;
+}
+
+.button-group .btn a {
+    color: inherit; /* Warna mengikuti button */
+    text-decoration: none; /* Menghilangkan garis bawah pada link */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    width: 100%; /* Lebar penuh button */
+    height: 100%; /* Tinggi penuh button */
+}
+
+.button-group .btn-edit {
+    background-color: #ffc107;
+    color: black;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button-group .btn-edit:hover {
+    background-color: #e0a800;
+    transform: scale(1.05);
+}
+
+.button-group .btn-delete {
+    background-color: #dc3545;
+    color: white;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button-group .btn-delete:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
+}
+
+.kursi-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 40px; /* Menambahkan margin untuk ruang button */
+    position: relative; /* Agar button bisa diposisikan absolut di dalam kursi-item */
+}
+/* kursi */
+.kursi-item {
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 20px; /* Mengatur margin antara kursi-item */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: relative; /* Agar button bisa diposisikan absolut di dalam kursi-item */
+}
+
+.kursi-item:hover {
+    background-color: #0056b3;
+    cursor: pointer;
+    /* transform: scale(1.05); */
+}
+
+.btn-edit {
+    background-color: #ffc107;
+    color: black;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.btn-edit:hover {
+    background-color: #e0a800;
+    transform: scale(1.05);
+}
+
+.toast-container {
+    max-width: 300px;
+}
+
+.slide-down {
+    animation: slide-down 0.5s ease 0s 1 normal forwards;
+}
+
+@keyframes slide-down {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.fade-out {
+    animation: fade-out 1s ease forwards;
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+/* ga ada isi */
