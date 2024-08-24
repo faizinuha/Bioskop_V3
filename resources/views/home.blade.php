@@ -7,31 +7,8 @@
         <a class="btn btn-outline-primary" href="{{ route('home') }}">Refresh</a>
     </form>
 @endsection
-{{-- @if ('berhasil')
-    <div class="toast-con mt-5 position-fixed" style="top: 100px; right: 0; z-index: 20">
-        <div class="toast align-items-center text-bg-success border-0 show" role="alert" aria-live="assertive"
-            aria-atomic="true">
-            <div class="d-flex">
-                <div class="toast-body">
-                    {{ session('berhasil') }}
-                </div>
-                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
-                    aria-label="Close"></button>
-            </div>
-        </div>
-    </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var toastElList = [].slice.call(document.querySelectorAll('.toast'));
-            var toastList = toastElList.map(function(toastEl) {
-                return new bootstrap.Toast(toastEl, {
-                    delay: 3000
-                });
-            });
-            toastList.forEach(toast => toast.show());
-        });
-    </script>
-@endif --}}
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
 {{-- order --}}
 @if (session('success'))
@@ -81,7 +58,7 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
             margin: 10px;
-            flex: 0 0 calc(16.66% - 20px);
+            flex: 0 0 calc(19.66% - 20px);
             box-sizing: border-box;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -124,6 +101,7 @@
         }
 
         .film-label-container {
+            font-size: 12px;
             display: flex;
             flex-direction: column;
             align-items: center;

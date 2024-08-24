@@ -16,7 +16,7 @@ use App\Http\Controllers\TanggalController;
 //     return view('home');
 // });
 
-// Route untuk otentikasi, termasuk login, register, dan logout
+// Route untuk otentikasi
 Auth::routes();
 
 // Route untuk home
