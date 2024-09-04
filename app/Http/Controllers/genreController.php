@@ -28,6 +28,7 @@ class genreController extends Controller
     /**
      * Show the form for creating a new resource.
      */
+    
     public function create()
     {
         return view("genres.createGenre");

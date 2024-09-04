@@ -13,7 +13,6 @@ class TanggalController extends Controller
      */
     public function index()
     {
-
         $tanggal = Tanggal::all();
         return view("dates.tanggal", compact("tanggal"));
     }
@@ -104,7 +103,9 @@ class TanggalController extends Controller
 
     public function destroy($id)
     {
+
         $tanggal = Tanggal::findOrFail($id);
+        
         $tanggalCount = $tanggal->details()->count();
 
         if ($tanggalCount > 0) {

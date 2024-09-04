@@ -8,6 +8,7 @@
 @endsection
 
 @section('content')
+
 @if (session('success'))
     <div class="toast-container position-fixed top-5 end-0 p-2" style="z-index: 11">
         <div class="toast align-items-center text-bg-success border-0 show slide-down" role="alert" aria-live="assertive" aria-atomic="true">

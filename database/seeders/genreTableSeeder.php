@@ -30,6 +30,11 @@ class GenreTableSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
+            [
+                'genre' => 'Perang XXi',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
             // Tambahkan data genre lainnya jika diperlukan
         ]);
     }
