@@ -10,6 +10,8 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\f\FilmController;
 use App\Http\Controllers\TanggalController;
+use App\Http\Controllers\categoryController;
+use App\Http\Controllers\productController;
 
 // Route untuk halaman welcome
 // Route::get('/', function () {
@@ -94,3 +96,10 @@ Route::get('/tanggal/{id}/edit', [TanggalController::class, 'edit'])->name('tang
 
 // web.php
 Route::get('/kursi/{id}', [KursiController::class, 'show'])->name('kursi.show');
+
+
+
+
+// live cooding.php
+Route::resource('Product',productController::class);
+Route::resource('category',categoryController::class);

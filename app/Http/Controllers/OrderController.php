@@ -18,7 +18,7 @@ class OrderController extends Controller
         $studio = Studio::all();
         $kursi = Kursi::all();
         $order = Order::with('studio', 'detail', 'kursi')->get();
-        // dd($order,$detail,$kursi,$studio);
+        // dd($order);
 
         $orders = Order::withTrashed()->get();
 
@@ -139,10 +139,6 @@ class OrderController extends Controller
 
         return redirect()->route("home")->with("success", "Berhasil Pesan Tiket");
     }
-
-
-
-
     /**
      * Display the specified resource.
      */
